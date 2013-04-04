@@ -6,9 +6,9 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
-fuchs() { cd ~/dev/fuchs/$1; }
-_fuchs() { _files -W ~/dev/fuchs -/; }
-compdef _fuchs fuchs
+fu() { cd ~/dev/fuchs/$1; }
+_fu() { _files -W ~/dev/fuchs -/; }
+compdef _fu fu
 
 alias zshconfig="st ~/.zshrc"
 alias ohmyzsh="st ~/.oh-my-zsh"
