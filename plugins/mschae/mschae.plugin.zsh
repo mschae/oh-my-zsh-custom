@@ -10,10 +10,9 @@ fu() { cd ~/dev/fuchs/$1; }
 _fu() { _files -W ~/dev/fuchs -/; }
 compdef _fu fu
 
-alias zshconfig="st ~/.zshrc"
-alias ohmyzsh="st ~/.oh-my-zsh"
-
-alias use='rvm use'
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzshconfig="$EDITOR ~/.oh-my-zsh"
+alias vimconfig="$EDITOR ~/.vim"
 
 # Rails Aliases
 alias schemaload='RAILS_ENV=test rake db:schema:load'
@@ -21,6 +20,8 @@ alias testmigrate='RAILE_ENV=test rake db:migrate'
 
 alias fs='bundle install && foreman start'
 alias grd='schemaload && testmigrate && guard'
+
+alias m=mvim
 
 # Start/Stop Commands
 alias 'pg.start'='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
