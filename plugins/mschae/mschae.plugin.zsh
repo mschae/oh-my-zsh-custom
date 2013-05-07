@@ -10,8 +10,10 @@ fu() { cd ~/dev/fuchs/$1; }
 _fu() { _files -W ~/dev/fuchs -/; }
 compdef _fu fu
 
+export EDITOR=vim
+
 alias zshconfig="$EDITOR ~/.zshrc"
-alias ohmyzshconfig="$EDITOR ~/.oh-my-zsh"
+alias omzconfig="$EDITOR ~/.oh-my-zsh"
 alias vimconfig="$EDITOR ~/.vim"
 
 # Rails Aliases
@@ -20,6 +22,8 @@ alias testmigrate='RAILE_ENV=test rake db:migrate'
 
 alias fs='bundle install && foreman start'
 alias grd='schemaload && testmigrate && guard'
+
+alias be='bundle exec'
 
 alias m=mvim
 
@@ -35,4 +39,5 @@ alias 'mysql.stop'='mysql.server stop'
 
 unsetopt correct_all
 
-ZSH_THEME="bira"
+ZSH_THEME="agnoster"
+DEFAULT_USER="ms2"
