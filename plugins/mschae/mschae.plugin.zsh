@@ -10,11 +10,16 @@ fu() { cd ~/dev/fuchs/$1; }
 _fu() { _files -W ~/dev/fuchs -/; }
 compdef _fu fu
 
-export EDITOR=vim
+br() {cd ~/dev/br/$1; }
+_br() { _files -W ~/dev/br -/; }
+compdef _br br
 
-alias zshconfig="$EDITOR ~/.zshrc"
-alias omzconfig="$EDITOR ~/.oh-my-zsh"
-alias vimconfig="$EDITOR ~/.vim"
+export EDITOR=vim
+export VISUAL_EDITOR=mvim
+
+alias zshconfig="$VISUAL_EDITOR ~/.zshrc"
+alias omzconfig="$VISUAL_EDITOR ~/.oh-my-zsh"
+alias vimconfig="$VISUAL_EDITOR ~/.vim"
 
 # Rails Aliases
 alias schemaload='RAILS_ENV=test rake db:schema:load'
@@ -36,6 +41,8 @@ alias 'redis.stop'='kill `cat /usr/local/var/run/redis.pid`'
 
 alias 'mysql.start'='mysql.server start'
 alias 'mysql.stop'='mysql.server stop'
+
+powit() { ln -s $PWD ~/.pow/${PWD:s/_/-/:t} }
 
 unsetopt correct_all
 
