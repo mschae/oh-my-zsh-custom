@@ -28,6 +28,7 @@ alias testmigrate='RAILE_ENV=test rake db:migrate'
 alias fs='bundle install && foreman start'
 alias grd='schemaload && testmigrate && guard'
 
+alias b=bundle
 alias be='bundle exec'
 
 alias m=mvim
@@ -46,5 +47,5 @@ powit() { ln -s $PWD ~/.pow/${PWD:s/_/-/:t} }
 
 unsetopt correct_all
 
-ZSH_THEME="agnoster"
+ZSH_THEME="mschae_agnoster"
 DEFAULT_USER="ms2"
