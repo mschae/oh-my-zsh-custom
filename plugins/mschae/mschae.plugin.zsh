@@ -1,18 +1,10 @@
-dev() { cd ~/dev/$1; }
-_dev() { _files -W ~/dev -/; }
+dev() { cd ~/src/$1; }
+_dev() { _files -W ~/src -/; }
 compdef _dev dev
 
 h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
-
-fu() { cd ~/dev/fuchs/$1; }
-_fu() { _files -W ~/dev/fuchs -/; }
-compdef _fu fu
-
-br() {cd ~/dev/br/$1; }
-_br() { _files -W ~/dev/br -/; }
-compdef _br br
 
 export EDITOR=vim
 export VISUAL_EDITOR=mvim
